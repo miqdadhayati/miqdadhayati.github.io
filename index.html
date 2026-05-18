@@ -3,97 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miqdad | Portfolio</title>
+<title>Miqdad | Projects</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <style>
-  body { 
-    font-family: Arial, sans-serif; 
-    margin: 0; 
-    padding: 40px; 
-    background-color: #f6f8fa; 
-    color: #24292e;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #1a1a1a;
   }
-  .header {
-    margin-bottom: 40px;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+
+  .nav-links span {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .nav-links span:hover {
+    color: #000;
+  }
+
+  header {
     text-align: center;
+    margin: 60px 0 40px 0;
   }
-  .grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px; 
-    max-width: 1000px;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px 80px 20px;
+    align-items: start;
   }
-  .card { 
-    background: white; 
-    padding: 24px; 
-    border-radius: 6px; 
-    border: 1px solid #e1e4e8;
+
+  .card {
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    min-height: 250px;
   }
-  .card h3 { 
-    margin-top: 0; 
-    color: #0366d6;
+
+  .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: transparent;
+    z-index: 10;
   }
-  .tech-tag {
-    display: inline-block;
-    padding: 4px 8px;
-    background-color: #f1f8ff;
-    color: #0366d6;
-    border-radius: 4px;
-    font-size: 12px;
-    margin-right: 5px;
-    margin-bottom: 10px;
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  a { 
-    text-decoration: none; 
-    color: #24292e; 
-    font-weight: bold; 
-    display: block;
-    margin-top: 15px;
+
+  .card-title i {
+    font-size: 0.85rem;
+    color: #888;
   }
-  a:hover {
-    color: #0366d6;
+
+  .meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 20px;
+  }
+
+  .tech-box {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
   }
 </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>Project Portfolio</h1>
-    <p>A collection of my software and hardware engineering projects.</p>
-  </div>
-
-  <div class="grid">
-    
-    <div class="card">
-      <h3>Plagiarism-Detector</h3>
-      <span class="tech-tag">Makefile</span>
-      <span class="tech-tag">VP-trees</span>
-      <span class="tech-tag">N-grams</span>
-      <p>A fast plagiarism detection tool implementing metric trees and a strictness level slider for precise text analysis.</p>
-      <a href="https://github.com/miqdadhayati/Plagiarism-Detector" target="_blank">View Source Code &rarr;</a>
+  <nav>
+    <div class="nav-brand">
+      <i class="fas fa-code"></i> Miqdad
     </div>
-
-    <div class="card">
-      <h3>Single-Cycle-Processor</h3>
-      <span class="tech-tag">Verilog</span>
-      <span class="tech-tag">RISC-V</span>
-      <p>A 32-bit RISC-V Register File and FSM controller designed for implementation on a BASYS 3 FPGA.</p>
-      <a href="https://github.com/miqdadhayati/Single-Cycle-Processor" target="_blank">View Source Code &rarr;</a>
+    <div class="nav-links">
+      <span><i class="fas fa-layer-group"></i> Projects</span>
     </div>
+  </nav>
 
-    <div class="card">
-      <h3>Defend-the-Keep-OOP</h3>
-      <span class="tech-tag">C++</span>
-      <p>An object-oriented programming project utilizing standard libraries and clean, straightforward logic.</p>
-      <a href="https://github.com/Khanx007/Defend-the-Keep-OOP" target="_blank">View Source Code &rarr;</a>
-    </div>
+  <header>
+    <h1>Projects</h1>
+  </header>
 
-    <div class="card">
-      <h3>Duck-Hunt</h3>
-      <span class="tech-tag">VHDL</span>
-      <p>Hardware description implementation of the classic game logic.</p>
-      <a href="https://github.com/miqdadhayati/Duck-Hunt" target="_blank">View Source Code &rarr;</a>
-    </div>
+  <div class="grid-container">
+
+    <a href="https://github.com/miqdadhayati/Plagiarism-Detector" target="_blank" class="card">
+      <h3 class="card-title">
+        Plagiarism-Detector <i class="fas fa-external-link-alt"></i>
+      </h3>
+      <div class="meta-info">
+        <div class="meta-item"><i class="fas fa-cube"></i> Makefile</div>
+      </div>
+      <p class="description">A fast plagiarism detection tool implementing metric trees and a strictness level slider for precise text analysis.</p>
+      <div class="tech-stack">
+        <div class="tech-box">VP-trees</div>
+        <div class="tech-box">N-grams</div>
+      </div>
+    </a>
+
+    <a href="https://github.com/miqdadhayati/Single-Cycle-Processor" target="_blank" class="card">
+      <h3 class="card-title">
+        Single-Cycle-Processor <i class="fas fa-external-link-alt"></i>
+      </h3>
+      <div class="meta-info">
+        <div class="meta-item"><i class="fas fa-microchip"></i> Verilog</div>
+      </div>
+      <p class="description">A 32-bit RISC-V Register File and FSM controller designed for implementation on a BASYS 3 FPGA.</p>
+      <div class="tech-stack">
+        <div class="tech-box">RISC-V</div>
+        <div class="tech-box">FPGA</div>
+      </div>
+    </a>
+
+    <a href="https://github.com/Khanx007/Defend-the-Keep-OOP" target="_blank" class="card">
+      <h3 class="card-title">
+        Defend-the-Keep-OOP <i class="fas fa-external-link-alt"></i>
+      </h3>
+      <div class="meta-info">
+        <div class="meta-item"><i class="fas fa-laptop-code"></i> C++</div>
+      </div>
+      <p class="description">An object-oriented programming project utilizing standard libraries and clean, straightforward logic.</p>
+      <div class="tech-stack">
+        <div class="tech-box">OOP</div>
+        <div class="tech-box">Standard Lib</div>
+      </div>
+    </a>
+
+    <a href="https://github.com/miqdadhayati/Duck-Hunt" target="_blank" class="card">
+      <h3 class="card-title">
+        Duck-Hunt <i class="fas fa-external-link-alt"></i>
+      </h3>
+      <div class="meta-info">
+        <div class="meta-item"><i class="fas fa-gamepad"></i> VHDL</div>
+      </div>
+      <p class="description">Hardware description implementation of the classic game logic.</p>
+      <div class="tech-stack">
+        <div class="tech-box">Digital Logic</div>
+      </div>
+    </a>
 
   </div>
 
